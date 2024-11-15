@@ -22,14 +22,14 @@ def generate_data(data_path: Path | str, model, tokenizer):
     better_data = torch.stack(better_data).squeeze()
     targets = torch.stack(targets)
     print(better_data.shape, targets.shape)
-    torch.save(better_data, open("data/X.pt", 'wb'))
-    torch.save(targets, open("data/y.pt", 'wb'))
+    torch.save(better_data, open("data/X_test.pt", 'wb'))
+    torch.save(targets, open("data/y_test.pt", 'wb'))
     return
 
 tokenizer = AutoTokenizer.from_pretrained("DeepPavlov/rubert-base-cased-sentence")
 model = AutoModel.from_pretrained("DeepPavlov/rubert-base-cased-sentence")
 
-data = generate_data('data/task-3-dataset.csv', model, tokenizer)
+data = generate_data('data/test50.csv', model, tokenizer)
 
 # phrase = "Привет, Андрей!"
 # inputs = tokenizer(phrase, return_tensors="pt")
