@@ -1,2 +1,3 @@
 # QuantNN
-Solutions of II quantum hackaton tasks
+
+Решения задач II Всероссийского квантового хакатона от команды "Балмеровы альпинисты".
